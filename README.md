@@ -5,7 +5,7 @@
 
 ![MIT License](nes.png)
 
-Nes theme for Flextype based on NES-style(8bit-like) CSS Framework.
+Nes theme for Flextype based on [NES-style(8bit-like)](https://nostalgic-css.github.io/NES.css/) CSS Framework.
 
 ## Installation
 * Unzip theme to the folder `/site/themes/`
