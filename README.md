@@ -6,3 +6,17 @@
 ![MIT License](nes.png)
 
 Nes theme for Flextype based on NES-style(8bit-like) CSS Framework.
+
+## Installation
+* Unzip theme to the folder `/site/themes/`
+* Go to `/site/config/settings.yaml` and update `theme:` setting with your theme name.
+* Save your changes.
+
+## Settings
+
+```yaml
+enabled: true # or `false` to disable the theme
+```
+
+## License
+See [LICENSE](https://github.com/flextype-themes/nes/blob/master/LICENSE)
