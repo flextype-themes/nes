@@ -1,0 +1,37 @@
+body {
+  padding: 0 2rem;
+  margin: 2rem;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+p {
+    margin-bottom: 2rem;
+}
+
+.navigation a {
+    text-decoration: none;
+}
+
+.container:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+div.containers > .container {
+  display: inline-block;
+  max-width: 400px;
+}
+
+.form.container > .field:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.footer {
+  text-align: center;
+}
+.footer a {
+  color: #333;
+  text-decoration: none;
+}

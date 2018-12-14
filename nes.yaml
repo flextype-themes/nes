@@ -1,0 +1,10 @@
+name: Nes
+version: 1.0.0
+description: Nes theme for Flextype based on NES-style(8bit-like) CSS Framework.
+author:
+  name: Sergey Romanenko
+  email: awilum@yandex.ru
+  url: https://github.com/Awilum
+homepage: https://github.com/flextype/flextype
+bugs: https://github.com/flextype/flextype/issues
+license: MIT
