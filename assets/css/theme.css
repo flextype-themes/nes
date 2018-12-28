@@ -11,6 +11,33 @@ p {
     margin-bottom: 2rem;
 }
 
+img {
+    width: 100%;
+}
+
+.blog-post {
+    color: #000;
+    margin-bottom: 40px;
+    padding-top: 40px;
+    display: block;
+    border-top: 1px solid #efefef;
+}
+.blog-post:first-of-type {
+    border-top: none;
+}
+
+.blog-post:hover {
+    text-decoration: none;
+}
+
+
+.blog-read {
+    text-align: center;
+    display: block;
+}
+
+
+
 .navigation a {
     text-decoration: none;
 }
@@ -31,6 +58,17 @@ div.containers > .container {
 .footer {
   text-align: center;
 }
+
+.powered {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ccc;
+    font-size: 12px;
+}
+
+
 .footer a {
   color: #333;
   text-decoration: none;
