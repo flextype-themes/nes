@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="{{ registry.settings.locale }}">
+    <head>
+        {% block head %}
+            <meta charset="{{ registry.settings.charset|lower }}">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="description" content="{% if entry.description %}{{ entry.description }}{% else %}{{ registry.settings.description }}{% endif %}">
+            <meta name="keywords" content="{% if entry.keywords %}{{ entry.keywords }}{% else %}{{ registry.settings.keywords }}{% endif %}">
+            <meta name="robots" content="{% if entry.robots %}{{ entry.robots }}{% else %}{{ registry.settings.robots }}{% endif %}">
+            <meta name="generator" content="Powered by Flextype {{ FLEXTYPE_VERSION }}" />
+
+            {% do emitter.emit('onThemeMeta') %}
+
+            <title>{% if entry.title %}{{ entry.title|e('html') }} | {% endif %}{{ registry.settings.title|e('html') }}</title>
+
+            <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
+            {% set build_css = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/css/build.min.css' %}
+            {% do assets.add('css', build_css, 'site', 1) %}
+            {% for assets_site in assets.get('css', 'site') %}
+                {% for assets_by_priorities in assets_site %}
+                    <link href="{{ assets_by_priorities.asset }}" rel="stylesheet">
+                {% endfor %}
+            {% endfor %}
+
+            {% do emitter.emit('onThemeHeader') %}
+            {{ snippets.exec('google-analytics')|raw }}
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container">
+          <div class="nes-container with-title is-centered is-rounded">
+            <p class="title">{{ registry.settings.title|e('html') }}</p>
+            <p>{{ registry.settings.description|e('html') }}</p>
+          </div>
+          <div class="nes-container is-rounded">
+             {% for item in entries.fetch('', {'order_by': {'field': 'menu_item_order', 'direction': 'asc'}}) %}
+                 {% if item.menu_item_title %}
+                     <a class="nes-btn {% if item.menu_item_url in entry.slug %}active{% endif %}" href="{{ base_url() }}/{{ item.menu_item_url }}">{{ item.menu_item_title }}</a>
+                 {% endif %}
+             {% endfor %}
+          </div>
+          <div class="nes-container is-rounded">
+             {% block content %}{% endblock %}
+          </div>
+          <div class="nes-container is-rounded">
+              {% block footer %}
+                  {{ tr('site_powered_by_flextype')|raw }}
+              {% endblock %}
+          </div>
+        </div>
+
+        {% set build_js = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/js/build.min.js' %}
+        {% do assets.add('js', build_js, 'site', 1) %}
+        {% for assets_site in assets.get('js', 'site') %}
+            {% for assets_by_priorities in assets_site %}
+                <script src="{{ assets_by_priorities.asset }}"></script>
+            {% endfor %}
+        {% endfor %}
+
+        {% do emitter.emit('onThemeTail') %}
+    </body>
+</html>

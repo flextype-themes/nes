@@ -1,0 +1,10 @@
+name: NES
+version: 1.2.0
+description: NES theme for Flextype
+author:
+  name: Sergey Romanenko
+  email: hello@romanenko.digital
+  url: http://romanenko.digital
+homepage: https://github.com/flextype-themes/nes
+bugs: https://github.com/flextype-themes/nes/issues
+license: MIT

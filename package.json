@@ -1,0 +1,16 @@
+{
+  "name": "Default",
+  "version": "1.2.0",
+  "devDependencies": {
+    "del": "^5.0.0",
+    "es6-promise": "^4.2.4",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "jquery": "^3.4.1",
+    "nes.css": "^2.2.1"
+  }
+}

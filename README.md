@@ -1,22 +1,23 @@
-# Nes Theme for [Flextype](http://flextype.org/)
-![version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg?style=flat-square)
-![Flextype](https://img.shields.io/badge/Flextype-0.7.4-green.svg?style=flat-square)
-![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
+# NES Theme for [Flextype](http://flextype.org/)
+![version](https://img.shields.io/badge/version-1.2.0-brightgreen.svg?style=flat-square "Version")
+![Flextype](https://img.shields.io/badge/Flextype-0.9.6-green.svg?style=flat-square "Flextype Version")
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/flextype-plugins/tiny-url/blob/master/LICENSE.txt)
 
-![MIT License](nes.png)
+![preview](preview.png)
 
-Nes theme for Flextype based on [NES-style(8bit-like)](https://nostalgic-css.github.io/NES.css/) CSS Framework.
+NES theme based on [NES-style(8bit-like)](https://nostalgic-css.github.io/NES.css/) CSS Framework.
 
 ## Installation
-* Unzip theme to the folder `/site/themes/`
-* Go to `/site/config/settings.yaml` and update `theme:` setting with your theme name.
-* Save your changes.
+1. Unzip theme to the folder `/site/themes/`
+2. Go to `/site/config/settings.yaml` and update `theme` setting with your theme name.
+3. Save your changes.
 
 ## Settings
+enabled: true or false to disable the theme
 
 ```yaml
-enabled: true # or `false` to disable the theme
+enabled: true
 ```
 
-## License
-See [LICENSE](https://github.com/flextype-themes/nes/blob/master/LICENSE)
+## LICENSE
+[The MIT License (MIT)](https://github.com/flextype-themes/nes/blob/master/LICENSE) Copyright (c) 2018-2020 [Sergey Romanenko](https://github.com/Awilum)
