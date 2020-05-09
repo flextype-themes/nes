@@ -1,63 +1,83 @@
 <!doctype html>
-<html lang="{{ registry.settings.locale }}">
+<html lang="{{ registry.get('flextype.settings.locale') }}">
     <head>
         {% block head %}
-            <meta charset="{{ registry.settings.charset|lower }}">
+            <meta charset="{{ registry.get('flextype.settings.charset')|lower }}">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <meta name="description" content="{% if entry.description %}{{ entry.description }}{% else %}{{ registry.settings.description }}{% endif %}">
-            <meta name="keywords" content="{% if entry.keywords %}{{ entry.keywords }}{% else %}{{ registry.settings.keywords }}{% endif %}">
-            <meta name="robots" content="{% if entry.robots %}{{ entry.robots }}{% else %}{{ registry.settings.robots }}{% endif %}">
-            <meta name="generator" content="Powered by Flextype {{ FLEXTYPE_VERSION }}" />
+            <meta name="description" content="{% if entry.description %}{{ entry.description }}{% else %}{{ registry.get('plugins.site.settings.description') }}{% endif %}">
+            <meta name="keywords" content="{% if entry.keywords %}{{ entry.keywords }}{% else %}{{ registry.get('plugins.site.settings.keywords') }}{% endif %}">
+            <meta name="robots" content="{% if entry.robots %}{{ entry.robots }}{% else %}{{ registry.get('plugins.site.settings.robots') }}{% endif %}">
+            <meta name="generator" content="Powered by Flextype"/>
 
-            {% do emitter.emit('onThemeMeta') %}
+            {% do
+                emitter.emit('onThemeMeta') %}
 
-            <title>{% if entry.title %}{{ entry.title|e('html') }} | {% endif %}{{ registry.settings.title|e('html') }}</title>
+            <title>
+                {% if entry.title %}{{ entry.title|e('html') }}
+                    |
+                {% endif %}{{ registry.get('plugins.site.settings.title')|e('html') }}</title>
 
             <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+            <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
 
-            {% set build_css = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/css/build.min.css' %}
-            {% do assets.add('css', build_css, 'site', 1) %}
-            {% for assets_site in assets.get('css', 'site') %}
-                {% for assets_by_priorities in assets_site %}
-                    <link href="{{ assets_by_priorities.asset }}" rel="stylesheet">
+
+            {% set theme = registry.get('plugins.site.settings.theme') %}
+            {% do registry.set('assets.site.css.' ~ [], 'project/themes/' ~ theme ~ '/assets/src/styles.css') %}
+
+            {% if registry.has('assets.site.css') %}
+                {% for css in registry.get('assets.site.css') %}
+                    <link href="{{ url() }}/{{ css }}" rel="stylesheet">
                 {% endfor %}
-            {% endfor %}
+            {% endif %}
 
-            {% do emitter.emit('onThemeHeader') %}
-            {{ snippets.exec('google-analytics')|raw }}
+            {% do
+                emitter.emit('onThemeHeader') %}
         {% endblock %}
     </head>
     <body>
         <div class="container">
-          <div class="nes-container with-title is-centered is-rounded">
-            <p class="title">{{ registry.settings.title|e('html') }}</p>
-            <p>{{ registry.settings.description|e('html') }}</p>
-          </div>
-          <div class="nes-container is-rounded">
-             {% for item in entries.fetch('', {'order_by': {'field': 'menu_item_order', 'direction': 'asc'}}) %}
-                 {% if item.menu_item_title %}
-                     <a class="nes-btn {% if item.menu_item_url in entry.slug %}active{% endif %}" href="{{ base_url() }}/{{ item.menu_item_url }}">{{ item.menu_item_title }}</a>
-                 {% endif %}
-             {% endfor %}
-          </div>
-          <div class="nes-container is-rounded">
-             {% block content %}{% endblock %}
-          </div>
-          <div class="nes-container is-rounded">
-              {% block footer %}
-                  {{ tr('site_powered_by_flextype')|raw }}
-              {% endblock %}
-          </div>
+            <nav class="nes-container with-title">
+                <h3 class="title"><a href="{{ url() }}">{{ registry.get('plugins.site.settings.title')|e('html') }}</a></h3>
+                <div>
+                    {% for item in entries.fetch('', {
+                        'order_by': {
+                            'field': 'menu_item_order',
+                            'direction': 'asc'
+                        }
+                    }) %}
+                        {% if item.menu_item_title %}
+                            <a
+                                href="{{ url() }}/{{ item.menu_item_url }}"
+                                class="nes-btn
+                              {% if loop.last %}mr-0{% else %}mr-4{% endif %}
+                              {% if item.menu_item_url in entry.slug %}is-primary{% endif %}">
+                                {{ item.menu_item_title }}
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </nav>
+
+            <div class="nes-container">
+                {% block content %}{% endblock %}
+            </div>
+
+            <footer class="nes-container">
+                {% block footer %}
+                    <small>{{ __('site_powered_by_flextype')|raw }}</small>
+                {% endblock %}
+            </footer>
         </div>
 
-        {% set build_js = base_url() ~ '/site/themes/' ~ registry.settings.theme ~ '/assets/dist/js/build.min.js' %}
-        {% do assets.add('js', build_js, 'site', 1) %}
-        {% for assets_site in assets.get('js', 'site') %}
-            {% for assets_by_priorities in assets_site %}
-                <script src="{{ assets_by_priorities.asset }}"></script>
+        {% if registry.has('assets.site.js') %}
+            {% for js in registry.get('assets.site.js') %}
+                {% if js %}
+                    <script type="text/javascript" src="{{ url() }}/{{ js }}"></script>
+                {% endif %}
             {% endfor %}
-        {% endfor %}
+        {% endif %}
 
-        {% do emitter.emit('onThemeTail') %}
+        {% do
+            emitter.emit('onThemeTail') %}
     </body>
 </html>

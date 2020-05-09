@@ -1,23 +1,32 @@
-# NES Theme for [Flextype](http://flextype.org/)
-![version](https://img.shields.io/badge/version-1.2.0-brightgreen.svg?style=flat-square "Version")
-![Flextype](https://img.shields.io/badge/Flextype-0.9.6-green.svg?style=flat-square "Flextype Version")
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/flextype-themes/nes/blob/master/LICENSE.txt)
+<h1 align="center">Nes Theme for <a href="https://flextype.org/">Flextype</a></h1>
 
 ![preview](preview.png)
 
-NES theme based on [NES-style(8bit-like)](https://nostalgic-css.github.io/NES.css/) CSS Framework.
+<p align="center">
+<a href="https://github.com/flextype-themes/nes/releases"><img alt="Version" src="https://img.shields.io/github/release/flextype-themes/nes.svg?label=version&color=black"></a> <a href="https://github.com/flextype-themes/nes"><img src="https://img.shields.io/badge/license-MIT-blue.svg?color=black" alt="License"></a> <a href="https://github.com/flextype-themes/nes"><img src="https://img.shields.io/github/downloads/flextype-themes/nes/total.svg?color=black" alt="Total downloads"></a> <a href="https://github.com/flextype-themes/nes"><img src="https://img.shields.io/badge/Flextype-0.9.8-green.svg?color=black" alt="Flextype"></a> <a href=""><img src="https://img.shields.io/discord/423097982498635778.svg?logo=discord&color=black&label=Discord%20Chat" alt="Discord"></a>
+</p>
+
+## Features
+
+* NES.css - [NES-style(8bit-like)](https://github.com/nostalgic-css/NES.css) CSS Framework.
+
+## Dependencies
+
+The following dependencies need to be downloaded and installed for Nes Theme.
+
+| Item | Version | Download |
+|---|---|---|
+| [flextype](https://github.com/flextype/flextype) | 0.9.8 | [download](https://github.com/flextype/flextype/releases) |
+| [site](https://github.com/flextype-plugins/site) | >=1.0.0 | [download](https://github.com/flextype-plugins/site/releases) |
+| [twig](https://github.com/flextype-plugins/twig) | >=1.0.0 | [download](https://github.com/flextype-plugins/twig/releases) |
 
 ## Installation
-1. Unzip theme to the folder `/site/themes/`
-2. Go to `/site/config/settings.yaml` and update `theme` setting with your theme name.
-3. Save your changes.
 
-## Settings
-enabled: true or false to disable the theme
-
-```yaml
-enabled: true
-```
+1. Download & Install all required dependencies.
+2. Create new folder `/project/themes/nes`
+3. Download Nes Theme and unzip theme to the folder `/project/themes/nes`
+4. Update setting `theme` with new value `nes` in `/project/config/plugins/site/settings.yaml`
 
 ## LICENSE
-[The MIT License (MIT)](https://github.com/flextype-themes/nes/blob/master/LICENSE) Copyright (c) 2018-2020 [Sergey Romanenko](https://github.com/Awilum)
+[The MIT License (MIT)](https://github.com/flextype-themes/nes/blob/master/LICENSE.txt)
+Copyright (c) 2018-2020 [Sergey Romanenko](https://github.com/Awilum)
