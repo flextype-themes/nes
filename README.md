@@ -1,4 +1,4 @@
-<h1 align="center">Nes Theme for <a href="https://flextype.org/">Flextype</a></h1>
+<h1 align="center">NES Theme for <a href="https://flextype.org/">Flextype</a></h1>
 
 ![preview](preview.png)
 
@@ -12,7 +12,7 @@
 
 ## Dependencies
 
-The following dependencies need to be downloaded and installed for Nes Theme.
+The following dependencies need to be downloaded and installed for NES Theme.
 
 | Item | Version | Download |
 |---|---|---|
@@ -24,7 +24,7 @@ The following dependencies need to be downloaded and installed for Nes Theme.
 
 1. Download & Install all required dependencies.
 2. Create new folder `/project/themes/nes`
-3. Download Nes Theme and unzip theme to the folder `/project/themes/nes`
+3. Download NES Theme and unzip theme to the folder `/project/themes/nes`
 4. Update setting `theme` with new value `nes` in `/project/config/plugins/site/settings.yaml`
 
 ## LICENSE
