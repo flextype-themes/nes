@@ -22,7 +22,7 @@
 
 
             {% set theme = registry.get('plugins.site.settings.theme') %}
-            {% do registry.set('assets.site.css.' ~ [], 'project/themes/' ~ theme ~ '/assets/src/styles.css') %}
+            {% do registry.set('assets.site.css.noir', 'project/themes/' ~ theme ~ '/assets/src/styles.css') %}
 
             {% if registry.has('assets.site.css') %}
                 {% for css in registry.get('assets.site.css') %}
@@ -39,12 +39,7 @@
             <nav class="nes-container with-title">
                 <h3 class="title"><a href="{{ url() }}">{{ registry.get('plugins.site.settings.title')|e('html') }}</a></h3>
                 <div>
-                    {% for item in entries.fetch('', {
-                        'order_by': {
-                            'field': 'menu_item_order',
-                            'direction': 'asc'
-                        }
-                    }) %}
+                    {% for item in collect(entries.fetchCollection('')).orderBy('menu_item_order', 'ASC').all() %}
                         {% if item.menu_item_title %}
                             <a
                                 href="{{ url() }}/{{ item.menu_item_url }}"
