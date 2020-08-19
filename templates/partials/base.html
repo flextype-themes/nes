@@ -45,7 +45,7 @@
                                 href="{{ url() }}/{{ item.menu_item_url }}"
                                 class="nes-btn
                               {% if loop.last %}mr-0{% else %}mr-4{% endif %}
-                              {% if item.menu_item_url in entry.slug %}is-primary{% endif %}">
+                              {% if item.menu_item_url in entry.id %}is-primary{% endif %}">
                                 {{ item.menu_item_title }}
                             </a>
                         {% endif %}
