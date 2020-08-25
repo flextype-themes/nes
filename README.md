@@ -3,7 +3,7 @@
 ![preview](preview.png)
 
 <p align="center">
-<a href="https://github.com/flextype-themes/nes/releases"><img alt="Version" src="https://img.shields.io/github/release/flextype-themes/nes.svg?label=version&color=black"></a> <a href="https://github.com/flextype-themes/nes"><img src="https://img.shields.io/badge/license-MIT-blue.svg?color=black" alt="License"></a> <a href="https://github.com/flextype-themes/nes"><img src="https://img.shields.io/github/downloads/flextype-themes/nes/total.svg?color=black" alt="Total downloads"></a> <a href="https://github.com/flextype-themes/nes"><img src="https://img.shields.io/badge/Flextype-0.9.10-green.svg?color=black" alt="Flextype"></a> <a href=""><img src="https://img.shields.io/discord/423097982498635778.svg?logo=discord&color=black&label=Discord%20Chat" alt="Discord"></a>
+<a href="https://github.com/flextype-themes/nes/releases"><img alt="Version" src="https://img.shields.io/github/release/flextype-themes/nes.svg?label=version&color=black"></a> <a href="https://github.com/flextype-themes/nes"><img src="https://img.shields.io/badge/license-MIT-blue.svg?color=black" alt="License"></a> <a href="https://github.com/flextype-themes/nes"><img src="https://img.shields.io/github/downloads/flextype-themes/nes/total.svg?color=black" alt="Total downloads"></a> <a href="https://github.com/flextype-themes/nes"><img src="https://img.shields.io/badge/Flextype-0.9.11-green.svg?color=black" alt="Flextype"></a> <a href=""><img src="https://img.shields.io/discord/423097982498635778.svg?logo=discord&color=black&label=Discord%20Chat" alt="Discord"></a>
 </p>
 
 ## Features
@@ -16,7 +16,7 @@ The following dependencies need to be downloaded and installed for NES Theme.
 
 | Item | Version | Download |
 |---|---|---|
-| [flextype](https://github.com/flextype/flextype) | 0.9.10 | [download](https://github.com/flextype/flextype/releases) |
+| [flextype](https://github.com/flextype/flextype) | 0.9.11 | [download](https://github.com/flextype/flextype/releases) |
 | [site](https://github.com/flextype-plugins/site) | >=1.0.0 | [download](https://github.com/flextype-plugins/site/releases) |
 | [twig](https://github.com/flextype-plugins/twig) | >=1.0.0 | [download](https://github.com/flextype-plugins/twig/releases) |
 
