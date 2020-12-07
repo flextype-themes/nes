@@ -39,7 +39,7 @@
             <nav class="nes-container with-title">
                 <h3 class="title"><a href="{{ url() }}">{{ registry.get('plugins.site.settings.title')|e('html') }}</a></h3>
                 <div>
-                    {% for item in collect(entries.fetchCollection('')).orderBy('menu_item_order', 'ASC').all() %}
+                    {% for item in arrays(entries.fetchCollection('')).sortBy('menu_item_order', 'ASC').all() %}
                         {% if item.menu_item_title %}
                             <a
                                 href="{{ url() }}/{{ item.menu_item_url }}"
