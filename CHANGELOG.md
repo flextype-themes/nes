@@ -1,3 +1,10 @@
+<a name="1.8.0"></a>
+# [1.8.0](https://github.com/flextype-themes/nes/compare/v1.7.0...v1.8.0) (2020-12-20)
+
+### Features
+
+* **core** update code base for new Flextype 0.9.13
+
 <a name="1.7.0"></a>
 # [1.7.0](https://github.com/flextype-themes/nes/compare/v1.6.0...v1.7.0) (2020-12-07)
 
