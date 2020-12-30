@@ -1,3 +1,11 @@
+<a name="1.9.0"></a>
+# [1.9.0](https://github.com/flextype-themes/nes/compare/v1.8.0...v1.9.0) (2020-12-30)
+
+### Features
+
+* **core** update code base for new Flextype 0.9.14
+* **core** use new TWIG Plugin 1.7.0
+
 <a name="1.8.0"></a>
 # [1.8.0](https://github.com/flextype-themes/nes/compare/v1.7.0...v1.8.0) (2020-12-20)
 

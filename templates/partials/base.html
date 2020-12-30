@@ -1,45 +1,45 @@
 <!doctype html>
-<html lang="{{ registry.get('flextype.settings.locale') }}">
+<html lang="{{ flextype.registry.get('flextype.settings.locale') }}">
     <head>
         {% block head %}
-            <meta charset="{{ registry.get('flextype.settings.charset')|lower }}">
+            <meta charset="{{ flextype.registry.get('flextype.settings.charset')|lower }}">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <meta name="description" content="{% if entry.description %}{{ entry.description }}{% else %}{{ registry.get('plugins.site.settings.description') }}{% endif %}">
-            <meta name="keywords" content="{% if entry.keywords %}{{ entry.keywords }}{% else %}{{ registry.get('plugins.site.settings.keywords') }}{% endif %}">
-            <meta name="robots" content="{% if entry.robots %}{{ entry.robots }}{% else %}{{ registry.get('plugins.site.settings.robots') }}{% endif %}">
+            <meta name="description" content="{% if entry.description %}{{ entry.description }}{% else %}{{ flextype.registry.get('plugins.site.settings.description') }}{% endif %}">
+            <meta name="keywords" content="{% if entry.keywords %}{{ entry.keywords }}{% else %}{{ flextype.registry.get('plugins.site.settings.keywords') }}{% endif %}">
+            <meta name="robots" content="{% if entry.robots %}{{ entry.robots }}{% else %}{{ flextype.registry.get('plugins.site.settings.robots') }}{% endif %}">
             <meta name="generator" content="Powered by Flextype"/>
 
             {% do
-                emitter.emit('onThemeMeta') %}
+                flextype.emitter.emit('onThemeMeta') %}
 
             <title>
                 {% if entry.title %}{{ entry.title|e('html') }}
                     |
-                {% endif %}{{ registry.get('plugins.site.settings.title')|e('html') }}</title>
+                {% endif %}{{ flextype.registry.get('plugins.site.settings.title')|e('html') }}</title>
 
             <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
             <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
 
 
-            {% set theme = registry.get('plugins.site.settings.theme') %}
+            {% set theme = flextype.registry.get('plugins.site.settings.theme') %}
             {% do registry.set('assets.site.css.noir', 'project/themes/' ~ theme ~ '/assets/src/styles.css') %}
 
             {% if registry.has('assets.site.css') %}
-                {% for css in registry.get('assets.site.css') %}
+                {% for css in flextype.registry.get('assets.site.css') %}
                     <link href="{{ url() }}/{{ css }}" rel="stylesheet">
                 {% endfor %}
             {% endif %}
 
             {% do
-                emitter.emit('onThemeHeader') %}
+                flextype.emitter.emit('onThemeHeader') %}
         {% endblock %}
     </head>
     <body>
         <div class="container">
             <nav class="nes-container with-title">
-                <h3 class="title"><a href="{{ url() }}">{{ registry.get('plugins.site.settings.title')|e('html') }}</a></h3>
+                <h3 class="title"><a href="{{ url() }}">{{ flextype.registry.get('plugins.site.settings.title')|e('html') }}</a></h3>
                 <div>
-                    {% for item in entries.fetch('', {'collection': true}).sortBy('menu_item_order', 'ASC').all() %}
+                    {% for item in flextype.entries.fetch('', {'collection': true}).sortBy('menu_item_order', 'ASC').all() %}
                         {% if item.menu_item_title %}
                             <a
                                 href="{{ url() }}/{{ item.menu_item_url }}"
@@ -65,7 +65,7 @@
         </div>
 
         {% if registry.has('assets.site.js') %}
-            {% for js in registry.get('assets.site.js') %}
+            {% for js in flextype.registry.get('assets.site.js') %}
                 {% if js %}
                     <script type="text/javascript" src="{{ url() }}/{{ js }}"></script>
                 {% endif %}
@@ -73,6 +73,6 @@
         {% endif %}
 
         {% do
-            emitter.emit('onThemeTail') %}
+            flextype.emitter.emit('onThemeTail') %}
     </body>
 </html>
